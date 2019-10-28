@@ -1,11 +1,9 @@
 $(document).ready(function() {
   $("#formOne").submit(function(e) {
-    $(".person1").text($("input#person1").val());
-    $(".person2").text($("input#person").val());
-    $(".animal").text($("input#animal").val());
-    $(".exclamation").text($("input#exclamation").val());
-    $(".verb").text($("input#verb").val());
-    $(".noun").text($("input#noun").val());
+    var names = ["person1", "person2", "animal", "exclamation", "verb", "noun"];
+    names.forEach(function(name) {
+      $("." + name).text($("input#" + name).val());
+    });
 
     $("#story").show();
     e.preventDefault();
